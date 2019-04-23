@@ -1,0 +1,55 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.homes_top{
+  background-image: url("/images/homes_image.jpg");
+  height: 100vh;
+  background-size: cover;
+  color:white;
+}
+.homes_top_text{
+  text-shadow: 3px 3px 3px yellow;
+  text-align: center;
+}
+
+.posted_function_about{
+  text-shadow: 3px 3px 3px red;
+  padding-bottom: 20px;
+}
+
+.posted_function_about h2{
+  padding-bottom: 7px;
+}
+
+.how_to_use{
+  text-shadow: 3px 3px 3px blue;
+  padding-bottom: 20px;
+}
+
+.how_to_use h2{
+  padding-bottom: 7px;
+}
+
+.new_function{
+  text-shadow: 3px 3px 3px green;
+}
+
+.new_function h2{
+  padding-bottom: 7px;
+}
+
+footer{
+  background-image: url("/images/footer_image.jpg");
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  width: 100%;
+}
+
+footer p{
+  text-align: center;
+  text-shadow: 3px 3px 3px red;
+  padding-top:7px;
+}

@@ -1,0 +1,22 @@
+
+<%= content_for(:html_title) {"ログイン"} %>
+<div class="login_image">
+  <div class="container">
+    <h1>ログイン</h1>
+
+    <%= form_with scope: :session, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :email, 'メールドレス' %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+    <%= f.submit 'ログイン', class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2019 T-Yuma</p>
+</footer>
