@@ -1,0 +1,22 @@
+<%= content_for(:html_title) {"ユーザー一覧"} %>
+
+<div class="user_index_image">
+  <div class="container">
+    <h1>ユーザー一覧</h1>
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th class="user_id_label"><%= User.human_attribute_name(:id) %></th>
+          <th class="user_name_label"><%= User.human_attribute_name(:name) %></th>
+        </tr>
+        <% @users.each do |user|  %>
+        <tr>
+          <td class="userid"><%= user.id %></td>
+          <td><%= link_to user.name, user_path(user) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @users %>
+  </div>
+</div>

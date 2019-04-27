@@ -9,3 +9,58 @@
   color: white;
   text-shadow: 3px 3px 3px #0033FF;
 }
+
+.table.table-hover{
+  font-size: 15px;
+}
+
+
+.user_index_image{
+  color: white;
+  background-image: url("/images/user_index.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.user_id_label{
+  color: white;
+}
+
+.user_name_label{
+  color: white;
+}
+
+.userid{
+  color: white;
+}
+
+.user_show_image{
+  background-image: url("/images/user_show_image.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: #99FFCC;
+  text-shadow: 3px 3px 3px green;
+}
+
+.user_show_th{
+  color: #99FFCC;
+  text-shadow: 3px 3px 3px green;
+}
+
+.user_show_td{
+  color: #99FFCC;
+  text-shadow: 3px 3px 3px green;
+}
+
+.user_edit_link{
+  text-shadow: 0px 0px 0px green;
+}
+
+.user_edit_image{
+  background-image: url("/images/user_edit.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: orange;
+  text-shadow: 3px 3px 3px blue;
+
+}
