@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   #ログインユーザーでなければ編集できない
   before_action :ensure_correct_user,{only: [:show, :edit, :update]}
+  before_action :set_user,{only: [:show, :edit, :edit, :update]}
 
   def index
     @users=User.all.page(params[:page]).per(10)
@@ -27,16 +28,12 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user=User.find(params[:id])
   end
 
   def edit
-    @user=User.find(params[:id])
   end
 
   def update
-    @user=User.find(params[:id])
-
     if @user.update(user_params)
       flash[:notice]="更新に成功しました。"
       redirect_to user_path
@@ -46,11 +43,14 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user=User.find(params[:id])
   end
 
   #ログイン中のユーザしか編集できない処理
