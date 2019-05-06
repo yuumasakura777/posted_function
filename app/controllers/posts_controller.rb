@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only:[:edit, :update, :destroy]
-  
+  before_action :set_post, only:[:edit, :show, :update, :destroy]
+
 
   def index
     @posts=Post.all.order(created_at: :desc).page(params[:page]).per(30)
@@ -20,6 +20,9 @@ class PostsController < ApplicationController
       flash.now[:alert]="テキストを入力してください。"
       render :new
     end
+  end
+
+  def show
   end
 
   def edit

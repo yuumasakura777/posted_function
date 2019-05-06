@@ -6,10 +6,7 @@
   <div class="posted_function">
     <% @posts.each do |post| %>
     <div class="posted_user_info">
-      <%= post.id %>:&ensp;&ensp;ユーザー&ensp;:&ensp;<%= post.user.name %>&ensp;&ensp;<%= post.created_at %>&ensp;&ensp;
-      <%= link_to '編集', edit_post_path(post), class: 'btn btn-primary' %>&ensp;
-      <%= link_to '削除', post_path(post), method: :delete, data: { confirm: 'この投稿を削除します。よろしいですか?'},class: 'btn btn-danger' %>
-      <%= render partial: '/likes/like' %>
+      <%= link_to post.id, post %>:&ensp;&ensp;ユーザー&ensp;:&ensp;<%= post.user.name %>&ensp;&ensp;<%= post.created_at %>&ensp;&ensp;
     </div>
     <div class="post_content">
       &ensp;&ensp;&ensp;&ensp;&nbsp;
@@ -18,5 +15,4 @@
     <% end %>
   </div>
   <div class="paginate"><%= paginate @posts %></div>
-  <%= render 'likes/like' %>
 </div>

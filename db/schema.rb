@@ -33,16 +33,6 @@ ActiveRecord::Schema.define(version: 2019_05_02_044158) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "post_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
-    t.index ["user_id", "post_id"], name: "index_likes_on_user_id_and_post_id", unique: true
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false

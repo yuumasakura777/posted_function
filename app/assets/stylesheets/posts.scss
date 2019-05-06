@@ -50,3 +50,16 @@
   padding-top:30px;
   padding-bottom:50px;
 }
+
+.post_show_image{
+  background-image: url("/images/post_show.jpg");
+  background-size: cover;
+  height: 100vh;
+  color: fuchsia;
+  text-shadow: 3px 3px 3px navy;
+}
+
+.post_show_text{
+  color: fuchsia;
+  text-shadow: 3px 3px 3px navy;
+}
