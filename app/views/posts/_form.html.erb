@@ -1,7 +1,7 @@
 
 <%= form_with model: @post, local: true do |f| %>
 <div class=form-group>
-  <%= f.label :content %>
+  <span><i class="fas fa-edit"></i> <%= f.label :content %></span>
   <%= f.text_field :content, class: 'form-control' %>
 </div>
 <%= f.submit '投稿', class: 'btn btn-primary' %>

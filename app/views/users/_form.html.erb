@@ -1,18 +1,18 @@
 <%= form_with model: @user, local: true do |f| %>
 <div class="form-group">
-  <%= f.label :name %>
+  <span><i class="fas fa-user"></i> <%= f.label :name %></span>
   <%= f.text_field :name, class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :email %>
+  <span><i class="fas fa-envelope"></i> <%= f.label :email %></span>
   <%= f.text_field :email, class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :password %>
+  <span><i class="fas fa-lock"></i> <%= f.label :password %></span>
   <%= f.password_field :password, class: 'form-control' %>
 </div>
 <div class="form-group">
-  <%= f.label :password_confirmation %>
+  <span><i class="fas fa-lock"></i> <%= f.label :password_confirmation %></span>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 </div>
 <%= f.submit '登録', class: 'btn btn-primary' %>
