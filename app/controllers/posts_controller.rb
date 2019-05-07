@@ -36,6 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    flash[:notice]="投稿番号#{@post.id}を削除しました。"
     redirect_to posts_path
   end
 
