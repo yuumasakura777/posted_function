@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      flash.now[:alert]="テキストを入力してください。"
+      flash.now[:alert]="1文字以上50文字以内でテキストを入力してください。"
       render :new
     end
   end
@@ -31,6 +31,9 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to posts_path
+    else
+      flash.now[:alert]="1文字以上50文字以内でテキストを編集してください。"
+      render :edit
     end
   end
 

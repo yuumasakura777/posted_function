@@ -1,0 +1,17 @@
+
+<div class="imgpost_new_image">
+  <div class="container">
+    <h1>写真投稿</h1>
+    <%= form_with model:@imgpost, local: true do |f| %>
+    <div class="form-group">
+      <span><i class="fas fa-file-signature"></i> <%= f.label :name %>(10文字以内)</span>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+      <div class="form-group">
+        <span><i class="fas fa-image"></i> <%= f.label :img %></span>
+        <%= f.file_field :img, class: 'form-control' %>
+      </div>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="imgpost_index_image">
+  <div class="container">
+    <h1>写真一覧</h1>
+    <p>お気にりの写真や面白い画像を投稿してください!(宇宙や宇宙人の写真大歓迎!)</p>
+    <p><%= link_to '投稿', new_imgpost_path, class: 'btn btn-primary' %></p>
+  　<div class="row">
+      <% @imgposts.each do |imgpost| %>
+        <div class="col-md-4">
+          <p>画像名:<%= imgpost.name %></p>
+          <p>投稿者:<%= imgpost.user.name %></p>
+          <p><%= image_tag imgpost.img.url ,class: 'imgpost_image'%></p>
+          <p><%= link_to '削除', imgpost_path(imgpost), method: :delete, data: { confirm: "#{imgpost.name}を削除します。よろしいですか?"}, class: "btn btn-danger"%></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="imgposts_paginate"><%= paginate @imgposts %></div>
+  </div>
+</div>
