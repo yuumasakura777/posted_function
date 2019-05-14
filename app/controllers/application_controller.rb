@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user
+  helper_method :current_user, :current_user?
   before_action :login_required
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404
@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user=User.find_by(id: session[:user_id]) if session[:user_id]
+  end
+
+  #いいねの真偽値を返す
+  def current_user?
+    !!current_user
   end
 
   def login_required

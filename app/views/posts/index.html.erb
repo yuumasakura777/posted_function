@@ -10,10 +10,10 @@
     <div class="post_content">
       &ensp;&ensp;&ensp;&ensp;&nbsp;
       <%= post.content %>
+
+      <%= render "likes/like", post: post %>
+
     </div>
-
-    <%= render "likes/like", post: post %>
-
     <% end %>
   </div>
   <div class="paginate"><%= paginate @posts %></div>
