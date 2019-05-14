@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'likes/create'
+  get 'likes/destroy'
   get 'imgposts/new'
   root to: 'homes#index'
 
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
+  resources :likes, only: [:create, :destroy]
 
   resources :imgposts ,only:[:new, :index, :create, :destroy]
 
