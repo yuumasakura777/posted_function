@@ -1,6 +1,4 @@
 
-
-
 <% if !current_user?(post.user) %>
     <span class="like">
     <% if post.iine?(current_user) %>
@@ -11,7 +9,7 @@
       <% end %>
     <% else %>
       <%= form_for(post.likes.build, remote: true) do |f| %>
-        <div><%= hidden_field_tag :post_id, post.id %></div>
+        <div><%= hidden_field_tag :post_id, micropost.id %></div>
         <%= button_tag(class: "btn btn-default btn-xs") do %>
           <%= content_tag :span, "#", class: "glyphicon glyphicon-heart-empty" %>
         <% end %>
