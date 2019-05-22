@@ -39,6 +39,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
 end
 
 group :production do
