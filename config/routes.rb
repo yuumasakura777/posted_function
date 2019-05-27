@@ -6,17 +6,12 @@ Rails.application.routes.draw do
   get 'imgposts/new'
   root to: 'homes#index'
 
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :likes, only: [:create, :destroy]
-
   resources :imgposts ,only:[:new, :index, :create, :destroy]
-
   resources :users
-
   resources :posts
 
   get '*path', controller: 'application', action: 'render_404'
