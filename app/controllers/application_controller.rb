@@ -16,14 +16,10 @@ class ApplicationController < ActionController::Base
     @current_user ||=User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
-
   def login_required
     unless current_user
       flash[:alert]="ログインしてください。"
       redirect_to login_path
     end
   end
-
-
-
 end

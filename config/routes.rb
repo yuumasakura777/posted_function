@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :imgposts ,only:[:new, :index, :create, :destroy]
-  resources :users
+  resources :users, except: [:index]
   resources :posts
-
+  
   get '*path', controller: 'application', action: 'render_404'
 
 end
